@@ -35,15 +35,9 @@ public class MasterOrder {
     }
 
     public void removeVariety(String variety) {
-        boolean iDeletedAll=false;
-        while(!iDeletedAll){
-            iDeletedAll=true;
-            for (int i = 0; i < orders.size(); i++) {
-                //System.out.println("###### "+orders.get(i).getVarietyOfCookies() + ": " + orders.get(i).getNumberOfBoxes());
-                if (orders.get(i).getVarietyOfCookies().equals(variety)) {
-                    orders.remove(i);
-                    iDeletedAll=false;
-                }
+        for (int i = orders.size() - 1; i >= 0 ; i--) {
+            if (orders.get(i).getVarietyOfCookies().equals(variety)) {
+                orders.remove(i);
             }
         }
     }
